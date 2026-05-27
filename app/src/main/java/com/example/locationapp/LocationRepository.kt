@@ -19,8 +19,8 @@ import javax.inject.Singleton
 @OptIn(ExperimentalCoroutinesApi::class)
 @Singleton
 class LocationRepository @Inject constructor(
-    @ApplicationContext private val context: Context,
-    private val dao: LocationDao
+    @param:ApplicationContext private val context: Context,
+    private val dao: LocationDao,
 ) {
     private val fusedClient = LocationServices.getFusedLocationProviderClient(context)
 

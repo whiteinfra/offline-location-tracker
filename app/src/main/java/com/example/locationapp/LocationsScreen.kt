@@ -35,13 +35,15 @@ fun LocationsScreen(viewModel: LocationViewModel = hiltViewModel()) {
         mutableStateOf(
             ContextCompat.checkSelfPermission(
                 context,
-                Manifest.permission.ACCESS_FINE_LOCATION
+                Manifest.permission.ACCESS_FINE_LOCATION,
             ) == PackageManager.PERMISSION_GRANTED
         )
     }
 
     if (!hasPermission) {
-        LocationPermissionScreen(onPermissionsGranted = { hasPermission = true })
+        LocationPermissionScreen {
+            hasPermission = true
+        }
     } else {
         LocationContent(viewModel)
     }

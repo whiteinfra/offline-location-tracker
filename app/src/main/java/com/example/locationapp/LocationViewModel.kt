@@ -13,7 +13,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class LocationViewModel @Inject constructor(
-    private val repo: LocationRepository
+    private val repo: LocationRepository,
 ) : ViewModel() {
 
     val locations: StateFlow<List<LocationEntity>> = repo.observeCachedLocations()
